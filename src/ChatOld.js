@@ -7,7 +7,7 @@ constructor(){
     this.state = {
         count : 1,
         comment : [],
-        bgcolor : []
+        bgcolor : ''
     }
     this.myRef = React.createRef();
 }
@@ -25,19 +25,15 @@ getRandomColor = () => {
 addComment = () => {
     let comment = this.myRef.current.value;
     let comments = this.state.comment;
-    let changeColor = this.getRandomColor();
-    let bColor = this.state.bgcolor;
 
     if (comment !== '') {
         comments.push(comment);
-        bColor.push(changeColor);
         this.setState({
             'comments' : comments,
-            'bColor' : bColor
+            bgcolor : this.getRandomColor()
         });
         this.myRef.current.value = '';
     }
-    console.log(bColor);
 }
 
 render(){
@@ -46,11 +42,11 @@ render(){
             <h1>Live chat (class)</h1>
             <div className='out'>
                     <ul>
-                        {this.state.comment.map((item,count) => <li key={count} style={{backgroundColor : this.state.bgcolor[count]}}>{item}</li>).reverse()}
+                        {this.state.comment.map((item,count) => <li key={count} style={{backgroundColor : this.state.bgcolor}}>{item}</li>).reverse()}
                     </ul>
             </div>
             <div className="block">
-                <textarea ref={this.myRef} rows="8" cols="50" placeholder="enter your comments"></textarea>
+                <textarea ref={this.myRef} rows="10" cols="50" placeholder="enter your comments"></textarea>
                 <button onClick={this.addComment}>ADD COMMENT</button>
             </div>
         </>

@@ -27,30 +27,30 @@ const getRandomColor = () => {
 const addComment = () => {
     let commentValue = myRef.current.value;
     let comments = [...comment, commentValue];
-    let bg = getRandomColor();
+    let changeColor = getRandomColor();
+    let bColor = [...bgcolor, changeColor];
 
     if (commentValue !== '') {
         setComment(comments);
-        setBgColor(bg);
+        setBgColor(bColor);
         myRef.current.value = '';
     }
+    console.log(bColor);
 }
 
 
     return(
         <>
             <h1>Comments chat (functional)</h1>
-            <div className="block">
-                <div>
+                <div className='out'>
                     <ul>
-                        {comment.map((item,index) => <li key={index}><span style={{backgroundColor : bgcolor}}>{item}</span></li>).reverse()}
+                        {comment.map((item,count) => <li key={count} style={{backgroundColor : bgcolor[count]}}>{item}</li>).reverse()}
                     </ul>
                 </div>
-                <div>
-                    <textarea ref={myRef} rows="10" cols="50" placeholder="enter your comments"></textarea>
+                <div className="block">
+                    <textarea ref={myRef} rows="8" cols="50" placeholder="enter your comments"></textarea>
                     <button onClick={addComment}>ADD COMMENT</button>
                 </div>
-            </div>
         </>
     )
 }
