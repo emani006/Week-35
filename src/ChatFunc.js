@@ -2,7 +2,7 @@ import React from 'react'
 import { useState} from 'react';
 
 export default function ChatFunc(){
-const [count, setCount] = useState(1);
+const [count] = useState(1);
 const [comment, setComment] = useState([]);
 const [bgcolor, setBgColor] = useState('');
 
@@ -42,9 +42,9 @@ const addComment = () => {
             <h1>Comments chat (functional)</h1>
             <div className="block">
                 <div>
-                    <ol start={count}>
+                    <ul>
                         {comment.map((item,index) => <li key={index}><span style={{backgroundColor : bgcolor}}>{item}</span></li>).reverse()}
-                    </ol>
+                    </ul>
                 </div>
                 <div>
                     <textarea ref={myRef} rows="10" cols="50" placeholder="enter your comments"></textarea>
