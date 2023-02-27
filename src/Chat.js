@@ -1,5 +1,4 @@
 import React from 'react'
-
 export default class Chat extends React.Component{
 
 constructor(){
@@ -51,7 +50,7 @@ render(){
             </div>
             <div className="block">
                 <textarea ref={this.myRef} rows="8" cols="50" placeholder="enter your comments"></textarea>
-                <button onClick={this.addComment}>ADD COMMENT</button>
+                <button className='chatButton' onClick={this.addComment}>ADD COMMENT</button>
             </div>
         </>
     )

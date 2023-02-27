@@ -2,11 +2,16 @@ import React from 'react'
 import { useState} from 'react';
 
 export default function ChatFunc(){
-const [count] = useState(1);
+// const [count] = useState(1);
 const [comment, setComment] = useState([]);
 const [bgcolor, setBgColor] = useState('');
 
 let myRef = React.createRef();
+
+// const regV = /viagra/gi;
+// const regX = /[x]{3,}/gi;
+// const subst = '***';
+
 
 // const handlerComment = () => {
 //     let currentCount = count;
@@ -29,8 +34,17 @@ const addComment = () => {
     let comments = [...comment, commentValue];
     let changeColor = getRandomColor();
     let bColor = [...bgcolor, changeColor];
+    // let array = [commentValue];
 
     if (commentValue !== '') {
+        // array.forEach(element => {
+        //     if (element.match(regV) || element.match(regX)) {
+        //         element = subst;
+        //         comments = [...comment, commentValue];
+        //         console.log(commentValue);
+        //     }
+        // });
+
         setComment(comments);
         setBgColor(bColor);
         myRef.current.value = '';
@@ -49,11 +63,14 @@ const addComment = () => {
                 </div>
                 <div className="block">
                     <textarea ref={myRef} rows="8" cols="50" placeholder="enter your comments"></textarea>
-                    <button onClick={addComment}>ADD COMMENT</button>
+                    <button className='chatButton' onClick={addComment}>ADD COMMENT</button>
                 </div>
         </>
     )
 }
+
+/// Исходный код JavaScript (домашнее задание Week-17)
+
 // const regV = /viagra/gi;
 // const regX = /[x]{3,}/gi;
 // const subst = '***';
@@ -78,7 +95,6 @@ const addComment = () => {
 //         }
 //     arrayContainer.push(arrayCom);
 
-    
 //     let div = document.createElement('div');
 //     div.className = 'out';
 //     document.getElementById('add').append(div);
