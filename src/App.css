@@ -31,7 +31,7 @@ button {
 }
 
 .validButton{
-  background-color: orange;
+  /* background-color: orange; */
   font-weight: bold;
   color: black;
   border-radius: 10px;

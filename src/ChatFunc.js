@@ -62,7 +62,7 @@ const addComment = () => {
                     </ul>
                 </div>
                 <div className="block">
-                    <textarea ref={myRef} rows="8" cols="50" placeholder="enter your comments"></textarea>
+                    <textarea ref={myRef} rows="4" cols="50" placeholder="enter your comments"></textarea>
                     <button className='chatButton' onClick={addComment}>ADD COMMENT</button>
                 </div>
         </>

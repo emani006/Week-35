@@ -49,7 +49,7 @@ render(){
                     </ul>
             </div>
             <div className="block">
-                <textarea ref={this.myRef} rows="8" cols="50" placeholder="enter your comments"></textarea>
+                <textarea ref={this.myRef} rows="4" cols="50" placeholder="enter your comments"></textarea>
                 <button className='chatButton' onClick={this.addComment}>ADD COMMENT</button>
             </div>
         </>
